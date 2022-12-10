@@ -37,7 +37,9 @@
               <p class="card-text">
                   {{$movie->summary}}
                 </p>
-              <p class="card-text">{{$movie->genres}}</p>
+                @foreach (json_decode($movie->genres) as $item)
+                  {{$item}}
+                @endforeach
               <p class="card-text">{{$movie->language}}</p>
         
             </div>

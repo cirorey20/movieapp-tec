@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MoviesController;
-// use App\Models\Movie;
-use Illuminate\Support\Facades\DB;
+use App\Models\Movie;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,16 +15,8 @@ use Illuminate\Support\Facades\DB;
 */
 
 //Vistas
-Route::get('/', function () {
-    $movies = DB::table('movies')->orderBy('id', 'desc')->paginate(5);
-    return view('layouts/app',  ['movie' => $movies]);
-});
+Route::get('/', [MoviesController::class, 'index']);
 
-Route::get('/detail/{id}', function ($id) {
-    $movie = Movie::find($id);
-    return view('layouts/detail', ['movie' => $movie]);
-});
+Route::get('/detail/{id}', [MoviesController::class, 'movie']);
 
-//API
-Route::get('/movies', [MoviesController::class, 'getMovies']);
-// Route::get('/test', [MoviesController::class, 'get']);
+

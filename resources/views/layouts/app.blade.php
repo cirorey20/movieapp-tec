@@ -25,10 +25,6 @@
         </div>
     </nav><br><br>
 
-
-
-
-
     <div class="container my-5">
         <h1 class="text-center">Latest Movies</h1> 
         <div class="row d-flex justify-content-center m-4">
@@ -45,18 +41,6 @@
             @endforeach
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-        <main class="py-4">
-            @yield('content')
-        </main>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
