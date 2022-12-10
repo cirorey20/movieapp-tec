@@ -20,6 +20,7 @@ class MoviesController extends Controller
     }
 
 
+
     //VISTAS
     public function index(){
         Movie::uploadMovies();
@@ -28,7 +29,7 @@ class MoviesController extends Controller
 
     }
     public function movie($id){
-        $movie = Movie::find($id);
+        $movie = Movie::find($id)->load('genres');
         return view('layouts/detail', ['movie' => $movie]);
     }
     
